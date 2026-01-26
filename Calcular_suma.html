@@ -69,6 +69,26 @@
 </div>
 
 
+<div class="container">
+    <div class="content">
+        <h2>Multiplicacion de dos números</h2>
+
+        <form>
+            <div class="input-container">
+                <label for="num5">Primer número:</label>
+                <input type="text" id="num5">
+            </div>
+            <div class="input-container">
+                <label for="num6">Segundo número:</label>
+                <input type="text" id="num6">
+            </div>
+            <input type="button" value="Calcular multiplicacion"  onclick="calcularMultiplicacion()" style="background-color: rgb(159, 189, 159);">
+        </form>
+        <div id="resultado3"></div>
+    </div>
+</div>
+
+
 <script>
 function calcularSuma() {
     // Obtener los valores de los campos de entrada
@@ -103,6 +123,24 @@ function calcularResta() {
     } else {
         // Mostrar un mensaje de error si los valores no son números
         document.getElementById("resultado2").innerHTML = "Por favor, ingrese dos números válidos.";
+    }
+}
+
+function calcularMultiplicacion() {
+    // Obtener los valores de los campos de entrada
+    var num5 = parseFloat(document.getElementById("num5").value);
+    var num6 = parseFloat(document.getElementById("num6").value);
+
+    // Verificar si ambos valores son números
+    if (!isNaN(num5) && !isNaN(num6)) {
+        // Calcular la suma
+        var multiplicacion = num5 * num6;
+
+        // Mostrar el resultado en el elemento con id "resultado"
+        document.getElementById("resultado3").innerHTML = "El resultado de la multiplicacion es: " + multiplicacion;
+    } else {
+        // Mostrar un mensaje de error si los valores no son números
+        document.getElementById("resultado3").innerHTML = "Por favor, ingrese dos números válidos.";
     }
 }
 </script>
